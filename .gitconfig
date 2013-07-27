@@ -1,0 +1,28 @@
+[user]
+	name = chesney
+	email = carolissen@gmail.com
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+  gd = difftool
+  co = checkout
+  gs = status
+  gss = status -s
+  ga = add
+  gp = push
+  gl = log
+  glo = log --pretty=oneline --abbrev-commit
+  gdc = difftool --cached
+  gds = difftool --name-status
+  gm = commit -m
+  gma = commit -am
+  gam = commit --amend -m
+  gb = branch
+  go = checkout
+  gra = remote add
+  grr = remote rm
+  gpu = pull
+  gcl = git clone
+	d = difftool
