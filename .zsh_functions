@@ -1,0 +1,26 @@
+function setcluster() {
+  echo -e "Usage: give the name of the kube config file WITHOUT the .config extension\n"
+  CLUSTER=$1
+  if [ -n "$CLUSTER" ];then
+    export KUBECONFIG=/Users/$(whoami)/.kube/$CLUSTER.config
+    PS1=$(echo $PS1 | sed 's/)[^)]*$/)/')
+    local cluster_prompt="k8s:{ $CLUSTER }"
+    echo "connecting to $CLUSTER"
+    PS1+=$cluster_prompt
+  else
+    echo "Choose a kube config file."
+    ll ~/.kube/*.config
+  fi
+}
+
+function cleandesktop() {
+  echo -e "Cleaning desktop - moving images to ./screenshots"
+  cd ~/Desktop
+  mv *.png ./screenshots
+  mv *.jpg ./screenshots
+}
+
+function backupcluster() {
+  echo "IMPACTFUL CHANGES: Backing up local cluster"
+  sh /Users/ccarolis/projects/cka/acloud-guru/yaml/xxx-backup-cluster/execute.sh
+}

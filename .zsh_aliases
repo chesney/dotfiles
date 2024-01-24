@@ -1,0 +1,12 @@
+# Git
+alias gits='git status'
+alias gitl='git log --oneline'
+alias gita='git add'
+alias gitc='git commit -v'
+
+# Kubernetes
+alias k=kubectl
+export do="--dry-run=client -o yaml" #k get pod $do
+export now="--force grace-period 0" #k delete pod x $now
+
+# Backup local kind cluster before making impactful changes.
